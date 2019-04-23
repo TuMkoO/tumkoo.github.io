@@ -1,0 +1,77 @@
+.unslider{overflow:auto;margin:0;padding:0}
+.unslider-wrap{position:relative}
+.unslider-wrap.unslider-carousel>li{float:left}
+.unslider-vertical>ul{height:100%}
+.unslider-vertical li{float:none;width:100%}
+.unslider-fade{position:relative}
+.unslider-fade .unslider-wrap li{position:absolute;left:0;top:0;right:0;z-index:8}
+.unslider-fade .unslider-wrap li.unslider-active{z-index:10}
+.unslider li,.unslider ol,.unslider ul{list-style:none;margin:0;padding:0;border:none}
+.unslider-arrow{position:absolute;left:20px;z-index:2;cursor:pointer; background: url('../images/arrow-left.png'); height: 56px; background-repeat: no-repeat;}
+.unslider-arrow.next{left:auto;right:20px; background: url('../images/arrow-right.png'); background-repeat: no-repeat;}
+
+
+
+
+	
+		/* Make the images fill the screen width */
+		.banner img {
+			width: 100%;
+		}
+
+		.banner ul li {
+			font-size: 0; /* убрать белый просвет*/  /* НО ПРОПАЛ ТЕКСТ СО СЛАЙДЕРА*/
+		}
+		
+		/* Style the text over the slides */
+		.banner {			
+		}
+
+
+		/* Style the dots*/
+		.unslider {
+			/* set the positioning context for the dots */
+			position: relative;
+		}
+		.unslider-nav { 
+			/* position the navigation dots over the slides */
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 90%;
+			
+			z-index: 999; /* Make sure the dots show over the images */
+		}
+		
+		/* Style the arrows*/
+		.unslider {
+			/* set the positioning context for the dots */
+			position: relative;
+		}
+		.unslider-arrow { 
+			/* position the navigation dots over the slides */
+			position: absolute;
+			top: 50%;
+			
+			z-index: 999; /* Make sure the dots show over the images */
+			
+			visibility: hidden;
+		}
+		
+		/* Change the arrow styles
+			You could also use an image instead
+		*/
+		.unslider-arrow { 
+			visibility: hidden;	/* Hide the default arrows */
+		}
+		
+		/* Use dynamic content to add in a different character and show it */
+		.unslider-arrow:before {
+			visibility: visible;
+		}
+		.unslider-arrow.prev:before {
+			content: url('../images/arrow-left.png');
+		}
+		.unslider-arrow.next:before {
+			content: url('../images/arrow-right.png');
+		}
