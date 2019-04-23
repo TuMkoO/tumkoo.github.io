@@ -1,0 +1,504 @@
+/* --------------- reset.css --------------- */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;                               /* обнуляем отступы и убираем бордюры */
+	vertical-align: baseline;          /* приводим все к одной базовой линии */
+	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
+	font-size: 100%;                     /* размер шрифта всем одинаковый */
+}
+a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	outline:none;
+}
+table {						/* устраняем отступы между ячейками таблицы */
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+td, td img {
+	vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
+} 
+input, select, button, textarea {
+	margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
+	font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
+	outline: none;
+}
+input[type="text"], input[type="password"], textarea {
+	padding: 0; 				/* убираем внутренние отступы для текстовых полей */
+}
+input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
+	vertical-align: bottom;
+}
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+nav ul {
+	 list-style:none;
+}
+/* --------------- /reset.css --------------- */
+
+/* --------------- базовые настройки ---------*/
+html {
+	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
+}
+body {
+	color: #000;
+	text-align: left;
+	font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
+	min-height:100%;
+	font-family: 'Oswald', sans-serif;   /**    font-family: 'Open Sans', sans-serif;    **/ 
+/**	font-family: 'Bebas Neue', sans-serif;         **/
+}
+a, a:visited { /* порядок правил для ссылок имеет значение */
+	color: #e6618c;
+	text-decoration: underline;
+}
+a:hover {
+	color: #fdf208;
+	text-decoration:none;
+}
+a:focus, a:active {
+	color: #c83867;
+	text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight:normal;
+}
+img{
+
+	max-width:100%;
+}
+.clr{
+	clear:both;
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+/* --------------- /базовые настройки ---------*/
+
+.center-block-main{
+	max-width: 1024px;
+	margin: 0 auto;
+}
+.header-top{
+	padding: 22px 0;
+}
+	.logo{
+		float: left;
+		margin-left: 23px;
+	}
+	.search-block{
+		float: left;
+		margin-left: 180px;
+		position: relative;	
+		width: 434px;	
+	}
+		.search-input{
+			color: #a1a1a1;
+			width: 100%;
+			height: 32px;
+			border: 1px solid #e1e1e1;
+			padding: 10px 30px 10px 10px;
+			position: absolute;
+			top: 10px;
+			left: 0;
+			box-sizing: border-box;
+		}
+		.search-btn{
+			position: absolute;
+			top: 15px;
+			right: 10px;
+		}
+	.cart{
+		float: right;
+		margin-right: 23px;
+	}
+		.cart img{
+			float: left;
+			margin-right: 15px;
+			padding-top: 7px;
+		}
+		.cart p{
+			float: right;
+			color: #a1a1a1;
+			font-size: 2.0625em;
+		}
+.header-bottom{
+	background: #4ccfc1;
+}
+	.menu{
+		float: left;
+		margin: 10px 0px 10px 0px;
+	}
+		.menu li{
+			float: left;
+			text-transform: uppercase;
+			font-size: 1.3125em ;
+			margin-right: 12px;
+			padding: 0 0 0 14px;
+			border-left: 2px solid #fff;
+		}
+		.menu li:first-child{
+			border-left: none;
+			margin-left: 0;
+		}
+			.menu li a{
+				color: #fff;
+				text-decoration: none;
+			}
+			.menu li a:hover{
+				text-decoration: underline;
+			}
+
+
+.banner{
+}
+	.banner ul li{
+		position: relative;
+		color: #fff;	 
+		font-size: 0; /* убрать белый просвет*/	
+	}
+	.slide-text-wrapper{
+		position: absolute;
+		top: 15%;
+		left: 47%;
+		max-width: 400px;
+	}
+	.banner ul li h2{
+		font-size: 61px;
+		font-weight: 300;
+		line-height: 0.7;
+		margin-bottom: 20px;
+		text-transform: uppercase;
+
+	}
+	.banner ul li p{
+		font-size: 17px;
+		font-family: 'Open Sans', sans-serif;
+	}
+	.banner ul li img{
+		width: 100%;
+	}
+	a.shopnow-btn{
+		color: #fff;
+		display: inline-block;
+		padding: 5px 20px;
+		border: 3px solid #fff;
+		border-radius: 7px;
+		font-size: 27px;
+		font-weight: 600;
+		text-decoration: none;
+		text-transform: uppercase;
+		margin-top: 30px;
+		font-family: 'Oswald', sans-serif;
+	}
+	.unslider-nav{
+		max-width: 1170px;
+		margin: -19px auto 0 auto;
+		position: relative;
+		top: -35px;
+	}
+
+
+.banner2 { position: relative; overflow: auto; }
+    .banner2 li { list-style: none; }
+        .banner2 ul li { float: left; }
+
+
+	.block3-slide{
+		width: 100%;
+		margin: 0 auto;
+	}
+
+		.block3-slide article {
+		float: left;
+		width: 33%;
+		border-left: 1px solid #e4e4e4;
+		
+		}
+		.block3-slide article:first-child {
+			border-left: none;
+			margin-right: 0;
+		}
+		.block3-slide h2{
+			font-size: 1.6875em;
+			color: #afafaf;
+			text-transform: uppercase;
+			line-height: 1.1;
+			margin-bottom: 10px;
+		}
+		.block3-slide img {
+			display: block;
+			float: left;
+			padding: 25px;
+			
+		}
+		.block3-slide-main-content{
+		/*	width: 100%;*/
+			padding-top: 50px;
+		}
+
+		.block3-slide p{
+			float: right;
+		}
+		.block3-slide a{
+			background: #3cc395;
+			border-radius: 5px;
+			font-size: 0.9375em;
+			text-decoration: none;
+			color: #fff;
+			padding: 5px 20px;
+			text-transform: uppercase;
+		}
+
+
+
+
+.line{
+	background: #42c3b6;
+	margin-bottom: 45px;
+}
+	.line p{
+		font-size: 1.9375em;
+		text-transform: uppercase;
+		color: #fff;
+		padding: 24px 58px;
+	}
+
+
+.block3-main{
+	margin-bottom: 30px;
+}
+	.block3-main article {
+		float: left;
+		width: 26.82%;
+		margin: 0 25px 50px 25px;
+		border: 1px solid #e4e4e4;
+		border-bottom: 3px solid #3cc395;
+		padding: 20px 0 20px 0;
+	}
+	.block3-main h2{
+		font-size: 1.6875em;
+		color: #afafaf;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	.price {
+		font-size: 1.6875em;
+		color: #afafaf;
+		text-transform: uppercase;
+		text-align: center;
+		padding-bottom: 15px;
+	}
+	.block3-main img {
+		display: block;
+		margin: 0 auto;
+	}
+	.block3-main a{
+		background: #3cc395;
+		border-radius: 5px;
+		font-size: 0.725em;
+		text-decoration: none;
+		color: #fff;
+		padding: 5px 7px;
+	}
+
+.ftr1{
+	background: #3cc3b5;
+	padding: 50px 0;
+}
+	.ftr article{
+		float: left;
+		width: 23%;
+		margin-left: 2.6%;
+	}
+	.ftr article:first-child{
+		margin-left: 0;
+	}
+		.links{
+			list-style: none;
+		}
+		.ftr-block-content h2{
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 1.6875em;
+			margin-bottom: 30px;
+		}
+		.ftr-block-content a{
+			color: #fff;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 0.9375em;
+			text-decoration: none;
+		}
+		.ftr-block-content a:hover{
+			text-decoration: underline;
+		}
+
+
+.ftr2 {
+	background: #2da89b;
+	color: #fff;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.9375em;
+	padding: 15px 0;
+}
+
+
+@media screen and (max-width: 1200px) {
+	a.shopnow-btn{
+		margin-top: 10px;
+	}
+	.banner ul li p{
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 1050px) {
+	.banner ul li h2{
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 985px) {
+	a.shopnow-btn{
+		margin-top: 10px;
+	}
+	.banner ul li h2{
+		font-size: 41px;
+	}
+	.banner ul li p{
+		font-size: 15px;
+	}
+
+	.block3-slide-main-content{
+			float: right;
+			margin-right: 30%;
+			margin-bottom: 20px;
+			padding-top: 0;
+		}
+
+	.block3-slide h2{
+			font-size: 1.6875em;
+			margin-bottom: 10px;
+		}
+		.block3-slide img {
+			float: none;
+			margin: 0 auto;
+			padding: 15px;
+			
+		}
+		.block3-main article {
+		width: 30%; /* 26.82 */
+		margin: 0 12px 30px 12px;
+	}
+}
+
+
+
+@media screen and (max-width: 920px) {
+	.cart{
+		float: left;
+		margin-right: 0px;
+		margin-left: 40px;
+	}
+	.banner ul li h2{
+		font-size: 31px;
+	}
+	.banner ul li p{
+		font-size: 12px;
+	}
+	a.shopnow-btn{
+		margin-top: 10px;
+		font-size: 20px;
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+
+	.block3-main article {
+		width: 45%; /* 26.82 */
+		margin: 0 15px 30px 15px;
+	}
+}
+
+@media screen and (max-width: 765px) {
+	.logo{
+		float: none;
+		margin-left: 0;
+		text-align: center;
+	}
+	.banner ul li h2{
+		font-size: 21px;
+	}
+	a.shopnow-btn{
+		margin-top: 5px;
+		font-size: 15px;
+	}
+
+	.ftr article{
+		width: 45%;
+		margin-left: 5%;
+	}
+	.ftr article:first-child{
+		margin-left: 5%;
+	}
+}
+
+@media screen and (max-width: 670px) {
+	.banner ul li h2{
+		font-size: 18px;
+	}
+	a.shopnow-btn{
+		font-size: 12px;
+	}
+	.slide-text-wrapper{
+		top: 10%;
+		left: 40%;
+	}
+	.block3-main article {
+		width: 48%; /* 26.82 */
+		margin: 0 5px 10px 5px;
+	}
+	.search-input{
+			width: 90%;			
+	}
+	.search-btn{
+			right: 55px;
+	}
+}
+
+@media screen and (max-width: 630px) {
+	.block3-main article {
+		width: 90%; /* 26.82 */
+		margin: 0 5px 20px 25px;
+	}
+	.slide-text-wrapper{
+		max-width: 350px;
+	}
+	.search-input{
+			width: 80%;			
+	}
+	.search-btn{
+			right: 95px;
+	}
+}
