@@ -1,0 +1,345 @@
+/* --------------- reset.css --------------- */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;                               /* обнуляем отступы и убираем бордюры */
+	vertical-align: baseline;          /* приводим все к одной базовой линии */
+	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
+	font-size: 100%;                     /* размер шрифта всем одинаковый */
+}
+a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	outline:none;
+}
+table {						/* устраняем отступы между ячейками таблицы */
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+td, td img {
+	vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
+} 
+input, select, button, textarea {
+	margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
+	font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
+	outline: none;
+}
+input[type="text"], input[type="password"], textarea {
+	padding: 0; 				/* убираем внутренние отступы для текстовых полей */
+}
+input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
+	vertical-align: bottom;
+}
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+nav ul {
+	 list-style:none;
+}
+/* --------------- /reset.css --------------- */
+
+/* --------------- базовые настройки ---------*/
+html {
+	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
+}
+body {
+	color: #000;
+	text-align: left;
+	font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
+	min-height:100%;
+	font-family: 'PT Sans', sans-serif;
+}
+a, a:visited { /* порядок правил для ссылок имеет значение */
+	color: #e6618c;
+	text-decoration: underline;
+}
+a:hover {
+	color: #fdf208;
+	text-decoration:none;
+}
+a:focus, a:active {
+	color: #c83867;
+	text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight:normal;
+}
+img{
+
+	max-width:100%;
+}
+.clr{
+	clear:both;
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+/* --------------- /базовые настройки ---------*/
+
+@font-face {
+	font-family: 'InsetFHeavy';
+	src: url('../fonts/InsetFHeavy.ttf') format('truetype'),  
+	url('../fonts/InsetFHeavy.fft') format('truetype');
+}
+
+
+.header {
+	background: url(../img/bkg1_dskt.jpg);
+	background-size: cover;
+	position: relative;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+	overflow: hidden;
+}
+
+.header-img {position: absolute; bottom: 0;}
+.header-img-left{left: 13%;  }
+.header-img-right{right: 13%; }
+
+.header__title {
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 24px;
+	text-align: center;
+}
+span.title-star {display: inline-block;}
+span.title-star::after {content: url(../img/b1.png);}
+
+.header-caption {margin-top: 30px;}
+.header-caption h2{
+	font-family: 'InsetFHeavy', sans-serif;
+	font-size: 80px;
+	color: #e1041e;
+	text-align: center;
+	margin-bottom: -57px;
+}
+.header-caption p {
+	font-size: 30px; 
+	font-weight: 700; 
+	line-height: 1.2; 
+	text-align: center; 
+	border: 2px solid #e1041e; 
+	border-top:none; 
+	padding: 60px 0 20px; 
+	width: 100%;
+}
+
+.title-line {
+  /* чтобы линии не выходили за ширину блока заголовка */
+  overflow: hidden;
+}
+.title-line:before,
+.title-line:after {
+  content: '';
+  /* делаем линию строчно-блочной */
+  display: inline-block;
+  /* выравниваем вертикально по середине */
+  vertical-align: middle;
+  /* не позволяем ширине превысить 100% (будет добавлен бордюр) */
+  box-sizing: border-box;
+  /* установка ширины в 100% делает линию равной ширине тега заголовка
+  ** благодаря этому линия заполнит все свободное пространство
+  ** слева и справа от текста
+  */
+  width: 100%;
+  height: 2px;
+  background: #e1041e;
+  /* добавляем к линии левый и правый бордюр цветом основного фона заголовка
+  ** благодаря этому создается нужный отступ между линиями и текстом
+  */
+  /*border: solid #fff;*/
+  border-width: 0 10px;
+}
+.title-line:before {
+  /* смещаем левую линию влево отрицательным отступом, равным 100% ширины
+  ** благодаря этому линия встает слева от текста
+  */
+  margin-left: -100%;
+}
+.title-line:after {
+  /* смещаем правую линию вправо отрицательным отступом, равным 100% ширины
+  ** благодаря этому линия встает справа от текста
+  */
+  margin-right: -100%;
+}
+
+.header-text-container { 
+	border: 1px solid #f5aeb7; 
+	border-radius: 7px; 
+	background: rgba(255,255,255,.4);
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center; 
+	margin: 10px;
+	position: relative;
+}
+.title-star-header-text {position: absolute; top: -10px; left: -5px;}
+
+.header__btn-container, .header__date {text-align: center;}
+.btn-main {
+	font-size: 24px;
+	font-weight: 700;
+	font-family: Arial, sans-serif;
+	background: #ece411;
+	border: none;
+	border-radius: 35px;
+	padding: 20px 15px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+.btn-main:hover {
+	background: #e1041e;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+
+.header__date {font-size: 24px; font-weight: 700; color: #4e1118; line-height: 2; text-transform: uppercase;}
+
+.system {margin: 70px 0;}
+.container-block-20 {width: 20%; float: left;}
+.container-block-30 {width: 30%; float: left; }
+.container-block-5 {width: 5%; float: left; }
+.container-block-5 span {line-height: 3; font-size: 60px;}
+.system-container{text-align: center; font-weight: 700; font-size: 30px; line-height: 1; text-transform: uppercase;}
+.system-container img {margin-bottom: 10px;}
+
+.program {}
+.program-header {}
+.program-header__title {
+	font-size: 48px; 
+	font-family: 'InsetFHeavy', sans-serif;
+	color: #e1041e;
+	text-align: center;
+}
+.program-header__text {font-size: 30px; font-weight: 700; display: inline-block;}
+.program-header__text:last-child{float: right;}
+.program-body {background: url(../img/bkg2_dskt.jpg); padding-bottom: 30px; position: relative; }
+.program-body-container {position: relative; z-index: 9999999;}
+
+.program-img {position: absolute; left: 2%; top: 20%;}
+
+.program-list-container {}
+.program-list {list-style-image: url(../img/b2.png); padding-top: 30px; position: relative; top: 0; left: 0; max-width: 100%; margin-left: 20px;}
+.program-list-item {font-size: 18px; line-height: 2.5;}
+.program-list-item span {font-weight: 700;}
+
+.program-list-item:nth-child(1) {margin-left: 25px;}
+.program-list-item:nth-child(2) {margin-left: 35px;}
+.program-list-item:nth-child(3) {margin-left: 45px;}
+.program-list-item:nth-child(4) {margin-left: 50px;}
+.program-list-item:nth-child(5) {margin-left: 50px;}
+.program-list-item:nth-child(6) {margin-left: 40px;}
+.program-list-item:nth-child(7) {margin-left: 30px;}
+.program-list-item:nth-child(8) {margin-left: 20px;}
+.program-list-item:nth-child(9) {margin-left: 10px;}
+
+.program-list__list {list-style-image: url(../img/b3.png); margin-left: 40px;}
+.program-list__list-item {line-height: 1;}
+
+.result {text-align: center; font-weight: 700; border-bottom: 1px solid #e1041e;}
+.result h3 {font-size: 30px; font-weight: 700; text-transform: uppercase; color: #e1041e; }
+.result p {font-size: 24px;}
+
+
+
+@media (max-width: 1799px) {
+	.header-img-left{left: 3%;}
+	.header-img-right{right: 3%;}
+}
+@media (max-width: 1499px) {
+	.header-img-left{left: 0%;  }
+	.header-img-right{right: 0%; }
+}
+@media (max-width: 1199px) {
+	.header {background: url(../img/bkg1_tbl.jpg);}
+	
+	.header-img-left{left: -5%;  }
+	.header-img-right{right: -5%; }
+	
+	.header-caption h2 {font-size: 70px; margin-bottom: -50px;}
+	.header-caption p {font-size: 26px; padding: 60px 60px 20px;}
+	
+	.header-text-container {position: relative; z-index: 99999;}
+
+	.program-list {left: 2%; margin-left: 0;}
+
+	.program-body {background: url(../img/bkg2_tbl.jpg) ; }
+	.program-img {left: -20%;}
+
+}
+@media (max-width: 992px) {
+	.header__logo {display: none;}
+	.header-img-left{left: -10%;  }
+	.header-img-right{right: -10%; }
+	
+	.header__title {margin-top: 0!important;}
+	.header-caption h2 {font-size: 60px; margin-bottom: -43px}
+
+	.program-img {left: -25%;}
+	.program-list-item {line-height: 1.5}
+}
+@media (max-width: 768px) {
+	.header {background: url(../img/bkg1_mbl.jpg)cover;}
+	.header-img-left{left: -15%;  }
+	.header-img-right{right: -15%; }
+	.title-line:before,
+	.title-line:after {height: 0;}
+
+	.header-text-container {margin: 0}
+	
+	.header__title {font-size: 20px; color: #fff; text-align: center; margin: 20px 50px !important;}
+	.header-caption {margin-top: 0;}
+	
+	.header-caption h2, .program-header__title h2 {border-top: 1px solid #e1041e; border-bottom: 1px solid #e1041e;}
+	.header-caption h2 {font-size: 48px; position: relative; z-index: 99999;}
+	.header-caption p {border:none; color: #fff; font-size: 24px; padding: 60px 20px 20px; position: relative; z-index: 999999;}
+	.header__btn-container {position: relative; z-index: 99999;}
+
+	.container-block-10-sm {width: 10%;}
+	.container-block-45-sm {width: 45%;}
+	.container-block-100-sm {width: 100%;}
+	.container-block-5 span.small-height {line-height: 1;}
+
+	.program-body {background: url(../img/bkg2_mbl.jpg); background-repeat: no-repeat; background-color: #91d3d2;}
+	.program-img {display: none;}
+}
+@media (max-width: 576px) {
+	.header {background: url(../img/bkg1_mbl.jpg);}
+	.header-img-left{left: -25%;  }
+	.header-img-right{right: -25%; }
+	.header-text-container {margin: 10px;}
+}
+
+@media (max-width: 480px) {
+	.header .row.mt-3 {margin-top: 0 !important;}
+	.header__date {margin-bottom: 0 !important;}
+	
+	.program-header__text {}
+	.program-header__text:last-child{float: none;}
+	.program-list-item {line-height: 1.5;}
+	.program-list-item:nth-child(3) {margin-left: 50px;}
+	.program-list-item:nth-child(4) {margin-left: 60px;}
+	.program-list-item:nth-child(5) {margin-left: 70px;}
+	.program-list-item:nth-child(6) {margin-left: 65px;}
+	.program-list-item:nth-child(7) {margin-left: 55px;}
+	.program-list-item:nth-child(8) {margin-left: 40px;}
+	.program-list-item:nth-child(9) {margin-left: 25px;}
+}
